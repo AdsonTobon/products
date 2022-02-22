@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route principal
+Route::get('/', [MainController::class, 'index']);
 
 // Routes sin controller
 Route::get('/products', [ProductController::class, 'index']);
